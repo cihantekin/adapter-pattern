@@ -2,7 +2,7 @@
 
 namespace adapter_pattern.LegacyStuff
 {
-    public static class FootballerProvider
+    public class FootballerProvider
     {
         public static DataTable LegacyFootballerProvider()
         {

@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace adapter_pattern.ModernStuff
+﻿namespace adapter_pattern.ModernStuff
 {
-    internal class ModernFootballerConsumer
+    public class ModernFootballerConsumer
     {
+        public static void ConsumeFootballers(IEnumerable <Footballer> footballer)
+        {
+            // do some stuff
+        }
     }
 }
