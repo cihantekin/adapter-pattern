@@ -2,7 +2,7 @@
 {
     public class ModernFootballerConsumer
     {
-        public static void ConsumeFootballers(IEnumerable <Footballer> footballer)
+        public void ConsumeFootballers(IEnumerable <Footballer> footballer)
         {
             // do some stuff
         }

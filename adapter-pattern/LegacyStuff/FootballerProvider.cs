@@ -4,7 +4,7 @@ namespace adapter_pattern.LegacyStuff
 {
     public class FootballerProvider
     {
-        public static DataTable LegacyFootballerProvider()
+        public DataTable LegacyFootballerProvider()
         {
             DataTable dataTable = new();
             dataTable.Columns.Add(new DataColumn { Caption = "Team", DataType = typeof(string) });
