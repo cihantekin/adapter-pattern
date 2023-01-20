@@ -2,8 +2,8 @@
 {
     public record Footballer
     {
-        public string Team { get; set; } 
-        public string Name { get; set; }
+        public string Team { get; set; } = new("");
+        public string Name { get; set; } = new("");
         public DateTime BirthDate { get; set; }
         public Position Position { get; set; }
     }

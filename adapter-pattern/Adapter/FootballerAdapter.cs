@@ -16,20 +16,24 @@ namespace adapter_pattern.Adapter
         public IEnumerable<Footballer> Footballers()
         {
             DataTable legacyFootballers = _footballerProvider.LegacyFootballerProvider();
-            List<Footballer> footballers = new List<Footballer>();
+            List<Footballer> footballers = new();
 
-            for (var i = 0; i < legacyFootballers.Rows.Count; i++)
+            if (legacyFootballers is not null && legacyFootballers.Rows.Count > 0)
             {
-                var footballer = new Footballer
+                for (var i = 0; i < legacyFootballers.Rows.Count; i++)
                 {
-                    Name = legacyFootballers.Rows[i]["Name"].ToString(),
-                    BirthDate = (DateTime)legacyFootballers.Rows[i]["BirthDate"],
-                    Team = legacyFootballers.Rows[i]["Team"].ToString(),
-                    Position = FindPosition(legacyFootballers.Rows[i]["Position"].ToString())
-                };
+                    var footballer = new Footballer
+                    {
+                        Name = legacyFootballers.Rows[i]["Name"].ToString(),
+                        BirthDate = (DateTime)legacyFootballers.Rows[i]["BirthDate"],
+                        Team = legacyFootballers.Rows[i]["Team"].ToString(),
+                        Position = FindPosition(legacyFootballers.Rows[i]["Position"].ToString())
+                    };
 
-                footballers.Add(footballer);
+                    footballers.Add(footballer);
+                }
             }
+            
 
             return footballers;
         }
